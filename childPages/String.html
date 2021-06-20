@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script type="text/javascript" src="Util.js"></script>
+    <script type="text/javascript" src="String.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/vs2015.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+    <title>Pythonテスト　3.文字列</title>
+</head>
+
+<body>
+    <div class="container mb-3 pb-3">
+        <div class="row justify-content-center align-items-center">
+            <div class="col">
+                <h1 class="text-center">3.文字列</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-3 pb-3">
+        <div class="row">
+            <div class="col">
+                <button type="button" class="btn btn-primary" onclick="goBack()">もどる</button>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-primary" onclick="setVariable()">問題更新</button>
+            </div>
+        </div>
+    </div>
+    <div class="container bg-light mt-3 p-3">
+        <!--1.id=0-1-->
+        <div class="row border justify-content-center align-items-center">
+            <div class="col-3">
+                <p>1. 「<code><span id="0"></span></code>」という文字列を「<code>string</code>」という変数に代入し、小文字にする。</p>
+            </div>
+            <div class="col-3">
+                <p>出力 :
+                    <pre>
+                        <code class="python">
+->print(string)
+<span id="1"></span>
+                        </code>
+                    </pre>
+                </p>
+            </div>
+            <div class="col-1">
+                <button type="button" class="btn btn-primary" onclick="switchAnswer('A1')">答え</button>
+            </div>
+            <div class="col">
+                <div id="A1" style="visibility:hidden">
+                    <pre>
+                        <code class="python">
+string = "<span id="0"></span>"
+string = string.lower()
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!--2.id=2-3-->
+        <div class="row border justify-content-center align-items-center">
+            <div class="col-3">
+                <p>2. 「<code><span id="2"></span></code>」という文字列を「<code>string</code>」という変数に代入し、大文字にする。</p>
+            </div>
+            <div class="col-3">
+                <p>出力 :
+                    <pre>
+                        <code class="python">
+->print(string)
+<span id="3"></span>
+                        </code>
+                    </pre>
+                </p>
+            </div>
+            <div class="col-1">
+                <button type="button" class="btn btn-primary" onclick="switchAnswer('A2')">答え</button>
+            </div>
+            <div class="col">
+                <div id="A2" style="visibility:hidden">
+                    <pre>
+                        <code class="python">
+string = "<span id="2"></span>"
+string = string.upper()
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+
+        <!--3.id=4-6-->
+        <div class="row border justify-content-center align-items-center">
+            <div class="col-3">
+                <p>3. 「<code><span id="4"></span></code>」という文字列を「<code>string</code>」という変数に代入し、「<code><span id="5"></span></code>」が何文字目かを「<code>index</code>」という変数に代入する。</p>
+            </div>
+            <div class="col-3">
+                <p>出力 :
+                    <pre>
+                        <code class="python">
+->print(index)
+<span id="6"></span>
+                        </code>
+                    </pre>
+                </p>
+            </div>
+            <div class="col-1">
+                <button type="button" class="btn btn-primary" onclick="switchAnswer('A3')">答え</button>
+            </div>
+            <div class="col">
+                <div id="A3" style="visibility:hidden">
+                    <pre>
+                        <code class="python">
+string = "<span id="4"></span>"
+index = string.find("<span id="5"></span>")
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+
+        <!--4.id=7-9-->
+        <div class="row border justify-content-center align-items-center">
+            <div class="col-3">
+                <p>4. 「<code><span id="7"></span></code>」という文字列を「<code>string</code>」という変数に代入し、「<code><span id="8"></span></code>」が何文字あるかを「<code>index</code>」という変数に代入する。</p>
+            </div>
+            <div class="col-3">
+                <p>出力 :
+                    <pre>
+                        <code class="python">
+->print(index)
+<span id="9"></span>
+                        </code>
+                    </pre>
+                </p>
+            </div>
+            <div class="col-1">
+                <button type="button" class="btn btn-primary" onclick="switchAnswer('A4')">答え</button>
+            </div>
+            <div class="col">
+                <div id="A4" style="visibility:hidden">
+                    <pre>
+                        <code class="python">
+string = "<span id="7"></span>"
+index = string.count("<span id="8"></span>")
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+
+        <!--5.id=10-13-->
+        <div class="row border justify-content-center align-items-center">
+            <div class="col-3">
+                <p>5. 「<code><span id="10"></span></code>」という文字列を「<code>string</code>」という変数に代入し、「<code><span id="11"></span></code>」を「<code><span id="12"></span></code>」に置き換える。</p>
+            </div>
+            <div class="col-3">
+                <p>出力 :
+                    <pre>
+                        <code class="python">
+->print(string)
+<span id="13"></span>
+                        </code>
+                    </pre>
+                </p>
+            </div>
+            <div class="col-1">
+                <button type="button" class="btn btn-primary" onclick="switchAnswer('A5')">答え</button>
+            </div>
+            <div class="col">
+                <div id="A5" style="visibility:hidden">
+                    <pre>
+                        <code class="python">
+string = "<span id="10"></span>"
+string = string.replace("<span id="11"></span>", "<span id="12"></span>")
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+
+        <!--6.id=14-15-->
+        <div class="row border justify-content-center align-items-center">
+            <div class="col-3">
+                <p>6. 「<code><span id="14"></span></code>」という文字列を「<code>string</code>」という変数に代入し、先頭の文字を大文字にせよ。</p>
+            </div>
+            <div class="col-3">
+                <p>出力 :
+                    <pre>
+                        <code class="python">
+->print(string)
+<span id="15"></span>
+                        </code>
+                    </pre>
+                </p>
+            </div>
+            <div class="col-1">
+                <button type="button" class="btn btn-primary" onclick="switchAnswer('A6')">答え</button>
+            </div>
+            <div class="col">
+                <div id="A6" style="visibility:hidden">
+                    <pre>
+                        <code class="python">
+string = "<span id="14"></span>"
+string = string.capitalize()
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+
+        <!--7.id=16-17-->
+        <div class="row border justify-content-center align-items-center">
+            <div class="col-3">
+                <p>7. 「<code><span id="16"></span></code>」という文字列を「<code>strin</code>」という変数に代入し、全ての単語の先頭の文字を大文字にせよ。</p>
+            </div>
+            <div class="col-3">
+                <p>出力 :
+                    <pre>
+                        <code class="python">
+->print(string)
+<span id="17"></span>
+                        </code>
+                    </pre>
+                </p>
+            </div>
+            <div class="col-1">
+                <button type="button" class="btn btn-primary" onclick="switchAnswer('A7')">答え</button>
+            </div>
+            <div class="col">
+                <div id="A7" style="visibility:hidden">
+                    <pre>
+                        <code class="python">
+string = "<span id="16"></span>"
+string = string.title()
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+
+        <!--8.id=18-20-->
+        <div class="row border justify-content-center align-items-center">
+            <div class="col-3">
+                <p>8. 「<code><span id="18"></span></code>」という文字列を「<code>string</code>」という変数に代入し、「<code><span id="19"></span></code>」という文字で分割したものを「splited」という変数に代入せよ。</p>
+            </div>
+            <div class="col-3">
+                <p>出力 :
+                    <pre>
+                        <code class="python">
+->print(splited)
+[<span id="20"></span>]
+                        </code>
+                    </pre>
+                </p>
+            </div>
+            <div class="col-1">
+                <button type="button" class="btn btn-primary" onclick="switchAnswer('A8')">答え</button>
+            </div>
+            <div class="col">
+                <div id="A8" style="visibility:hidden">
+                    <pre>
+                        <code class="python">
+string = "<span id="18"></span>"
+string = string.split("<span id="19"></span>")
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

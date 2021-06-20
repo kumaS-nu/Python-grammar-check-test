@@ -1,0 +1,91 @@
+<!--htmlでは文章の構造を決めます。問題を書き，変化させるところを指定し，ボタンのイベントを設定します。-->
+<!--本当はVue.jsとか使った方がいいけどメンテできる人がいなくなるのでバニラです。by作者-->
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script type="text/javascript" src="Util.js"></script>
+    <!--ここで読み込むjsファイルはちゃんと切り替える。-->
+    <script type="text/javascript" src="Template.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/vs2015.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+    <!--タイトルはそれっぽい感じで。-->
+    <title>テンプレート</title>
+</head>
+
+<body>
+    <div class="container mb-3 pb-3">
+        <div class="row justify-content-center align-items-center">
+            <div class="col">
+                <!--タイトルをそれっぽい感じに。-->
+                <h1 class="text-center">-1.テンプレート</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-3 pb-3">
+        <div class="row">
+            <div class="col">
+                <button type="button" class="btn btn-primary" onclick="goBack()">もどる</button>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-primary" onclick="setVariable()">問題更新</button>
+            </div>
+        </div>
+    </div>
+    <!--ここより上はおまじない-->
+    <!--問題を囲む背景-->
+    <div class="container bg-light mt-3 p-3">
+        <!--ここに問題の情報を書くといい。-->
+        <!--問題と出力、答えの行を作成。-->
+        <div class="row border justify-content-center align-items-center">
+            <!--問題の領域を作成。-->
+            <div class="col-3">
+                <!--<p></p>の中に文章を書く。-->
+                <!--<span></span>を変数として使い、idで監理。変数自体はjsの方で設定。idは0から始める。-->
+                <!--<code></code>で囲うことでプログラムの中の文字として表示できる。-->
+                <p>1. 「<span id="0"></span>」と表示する関数「<code><span id="1"></span></code>」をつくる。</p>
+            </div>
+            <!--出力の領域を作成。-->
+            <div class="col-3">
+                <!--もし出力がなければ中身は空でよい。-->
+                <!--消す範囲はここから-->
+                <p>出力 :
+                    <!--<pre><code> hoge </code></pre>の中（つまり hoge と書いてあるところ）にコードを書くと、コードとして表示される。-->
+                    <!--classには言語を指定することができる。（無くても推測してくれるらしい。）-->
+                    <pre>
+                        <code class="python">
+-><span id="1"></span>()
+<span id="0"></span>
+                        </code>
+                    </pre>
+                </p>
+                <!--ここまで。-->
+            </div>
+            <!--答えの表示・非表示を変えるボタン。-->
+            <!--switchAnswer()の中身で答えの要素を指定する。要は答えの部分の<div>のidを入れる。-->
+            <div class="col-1">
+                <button type="button" class="btn btn-primary" onclick="switchAnswer('A1')">答え</button>
+            </div>
+            <!--答えの領域を作成。-->
+            <div class="col">
+                <!--答えのidをつける。id="A〇"〇は問題番号とつけるのを推奨する。-->
+                <div id="A1" style="visibility:hidden">
+                    <!--さきほどと同じように<pre><code></code></pre>の中にコードを書くと、コードとして表示される。-->
+                    <pre>
+                        <!--ここではclass="python"を指定する。-->
+                        <code class="python">
+def <span id="1"></span>():
+    print("<span id="0"></span>")
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

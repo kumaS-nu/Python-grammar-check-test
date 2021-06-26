@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script type="text/javascript" src="Util.js"></script>
+    <script type="text/javascript" src="Collections.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/vs2015.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+    <title>Pythonテスト 4.リスト・タプル・辞書</title>
+</head>
+
+<body>
+    <div class="container mb-3 pb-3">
+        <div class="row justify-content-center align-items-center">
+            <div class="col">
+                <h1 class="text-center">4.リスト・タプル・辞書</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-3 pb-3">
+        <div class="row">
+            <div class="col">
+                <button type="button" class="btn btn-primary" onclick="goBack()">もどる</button>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-primary" onclick="setVariable()">問題更新</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container bg-light mt-3 p-3">
+        <!--1:id=0-2-->
+        <div class="row border justify-content-center align-items-center">
+            <div class="col-3">
+                <p>1.<code> ['<span id="0"></span>', '<span id="1"></span>', '<span id="2"></span>']</code>というリスト「<code>languages</code>」をつくる。</p>
+            </div>
+            <div class="col-3">
+                <p>出力 :
+                    <pre>
+                        <code class="python">
+->print(languages)
+['<span id="0"></span>', '<span id="1"></span>', '<span id="2"></span>'] 
+                        </code>
+                    </pre>
+                </p>
+            </div>
+            <div class="col-1">
+                <button type="button" class="btn btn-primary" onclick="switchAnswer('A1')">答え</button>
+            </div>
+            <div class="col">
+                <div id="A1" style="visibility:hidden">
+                    <pre>
+                        <code class="python">
+languages = ['<span id="0"></span>', '<span id="1"></span>', '<span id="2"></span>']
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container bg-light mt-3 p-3">
+        <!--2:3-5-->
+        <div class="row border justify-content-center align-items-center">
+            <div class="col-3">
+                <p>2. 「<code>languages</code>」の<span id="3"></span>番目を「<code>lang</code>」という変数に代入する。</p>
+            </div>
+            <div class="col-3">
+                <p>出力 :
+                    <pre>
+                        <code class="python">
+->print(lang)
+'<span id="4"></span>'
+                        </code>
+                    </pre>
+                </p>
+            </div>
+            <div class="col-1">
+                <button type="button" class="btn btn-primary" onclick="switchAnswer('A2')">答え</button>
+            </div>
+            <div class="col">
+                <div id="A2" style="visibility:hidden">
+                    <pre>
+                        <code class="python">
+lang = languages[<span id="5"></span>]
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container bg-light mt-3 p-3">
+        <!--3:6-->
+        <div class="row border justify-content-center align-items-center">
+            <div class="col-3">
+                <p>3. 「<code>languages</code>」に「<code><span id="6"></span></code>」を追加する。</p>
+            </div>
+            <div class="col-3">
+                <p>出力 :
+                    <pre>
+                        <code class="python">
+->print(languages)
+['<span id="0"></span>', '<span id="1"></span>', '<span id="2"></span>', '<span id="6"></span>'] 
+                        </code>
+                    </pre>
+                </p>
+            </div>
+            <div class="col-1">
+                <button type="button" class="btn btn-primary" onclick="switchAnswer('A3')">答え</button>
+            </div>
+            <div class="col">
+                <div id="A3" style="visibility:hidden">
+                    <pre>
+                        <code class="python">
+languages.append('<span id="6"></span>')
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container bg-light mt-3 p-3">
+        <!--4:7-8-->
+        <div class="row border justify-content-center align-items-center">
+            <div class="col-3">
+                <p>4. 「<code>languages</code>」に<code>['<span id="7"></span>', '<span id="8"></span>']</code>というリストを追加する。</p>
+            </div>
+            <div class="col-3">
+                <p>出力 :
+                    <pre>
+                        <code class="python">
+->print(languages)
+['<span id="0"></span>', '<span id="1"></span>', '<span id="2"></span>', '<span id="6"></span>', '<span id="7"></span>', '<span id="8"></span>'] 
+                        </code>
+                    </pre>
+                </p>
+            </div>
+            <div class="col-1">
+                <button type="button" class="btn btn-primary" onclick="switchAnswer('A4')">答え</button>
+            </div>
+            <div class="col">
+                <div id="A4" style="visibility:hidden">
+                    <pre>
+                        <code class="python">
+languages.extend(['<span id="7"></span>', '<span id="8"></span>'])
+                        </code>
+                    </pre>
+                    <p>または</p>
+                    <pre>
+                        <code class="python">
+languages += ['<span id="7"></span>', '<span id="8"></span>']
+                        </code>
+                    </pre>
+                    <p>または</p>
+                    <pre>
+                        <code class="python">
+languages = languages + ['<span id="7"></span>', '<span id="8"></span>']
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container bg-light mt-3 p-3">
+        <!--5:9-12-->
+        <div class="row border justify-content-center align-items-center">
+            <div class="col-3">
+                <p>5. 「<code>languages</code>」の<span id="9"></span>番目に「<code>'<span id="10"></span>'</code>」を挿入する。</p>
+            </div>
+            <div class="col-3">
+                <p>出力 :
+                    <pre>
+                        <code class="python">
+->print(languages)
+[<span id="11"></span>] 
+                        </code>
+                    </pre>
+                </p>
+            </div>
+            <div class="col-1">
+                <button type="button" class="btn btn-primary" onclick="switchAnswer('A5')">答え</button>
+            </div>
+            <div class="col">
+                <div id="A5" style="visibility:hidden">
+                    <pre>
+                        <code class="python">
+languages.insert(<span id="12"></span>, '<span id="10"></span>')
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container bg-light mt-3 p-3">
+        <!--6:13-17-->
+        <div class="row border justify-content-center align-items-center">
+            <div class="col-3">
+                <p>6. 「<code>languages</code>」の<span id="13"></span>～<span id="14"></span>番目を「<code>sliced</code>」という変数に代入する。</p>
+            </div>
+            <div class="col-3">
+                <p>出力 :
+                    <pre>
+                        <code class="python">
+->print(sliced)
+[<span id="15"></span>] 
+                        </code>
+                    </pre>
+                </p>
+            </div>
+            <div class="col-1">
+                <button type="button" class="btn btn-primary" onclick="switchAnswer('A6')">答え</button>
+            </div>
+            <div class="col">
+                <div id="A6" style="visibility:hidden">
+                    <pre>
+                        <code class="python">
+sliced = languages[<span id="16"></span>:<span id="17"></span>]
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container bg-light mt-3 p-3">
+        <!--7:18-20-->
+        <div class="row border justify-content-center align-items-center">
+            <div class="col-3">
+                <p>6. 「<code>languages</code>」の<span id="18"></span>番目を削除する。</p>
+            </div>
+            <div class="col-3">
+                <p>出力 :
+                    <pre>
+                        <code class="python">
+->print(languages)
+[<span id="19"></span>] 
+                        </code>
+                    </pre>
+                </p>
+            </div>
+            <div class="col-1">
+                <button type="button" class="btn btn-primary" onclick="switchAnswer('A7')">答え</button>
+            </div>
+            <div class="col">
+                <div id="A7" style="visibility:hidden">
+                    <pre>
+                        <code class="python">
+languages.pop(<span id="20"></span>)
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container bg-light mt-3 p-3">
+        <!--8-->
+        <div class="row border justify-content-center align-items-center">
+            <div class="col-3">
+                <p>8.<code>('first', 'second', 'third')</code>というリスト「<code>numbers</code>」をつくる。</p>
+            </div>
+            <div class="col-3">
+                <p>出力 :
+                    <pre>
+                        <code class="python">
+->print(number)
+('first', 'second', 'third')
+                        </code>
+                    </pre>
+                </p>
+            </div>
+            <div class="col-1">
+                <button type="button" class="btn btn-primary" onclick="switchAnswer('A8')">答え</button>
+            </div>
+            <div class="col">
+                <div id="A8" style="visibility:hidden">
+                    <pre>
+                        <code class="python">
+numbers = ('first', 'second', 'third')
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container bg-light mt-3 p-3">
+    <!--9:21-23-->
+    <div class="row border justify-content-center align-items-center">
+        <div class="col-3">
+            <p>9. 「<code>numbers</code>」の<span id="21"></span>番目を「<code>num</code>」という変数に代入する。</p>
+        </div>
+        <div class="col-3">
+            <p>出力 :
+                <pre>
+                    <code class="python">
+->print(num)
+'<span id="22"></span>'
+                    </code>
+                </pre>
+            </p>
+        </div>
+        <div class="col-1">
+            <button type="button" class="btn btn-primary" onclick="switchAnswer('A9')">答え</button>
+        </div>
+        <div class="col">
+            <div id="A9" style="visibility:hidden">
+                <pre>
+                    <code class="python">
+num = numbers[<span id="23"></span>]
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="container bg-light mt-3 p-3">
+        <!--10:24-27--->
+        <div class="row border justify-content-center align-items-center">
+            <div class="col-3">
+                <p>10.<code> {'<span id="24"></span>' : <span id="25"></span>, '<span id="26"></span>' : <span id="27"></span>}</code>という辞書「<code>products</code>」をつくる。</p>
+            </div>
+            <div class="col-3">
+                <p>出力 :
+                    <pre>
+                        <code class="python">
+->print(products)
+{'<span id="24"></span>' : <span id="25"></span>, '<span id="26"></span>' : <span id="27"></span>}
+                        </code>
+                    </pre>
+                </p>
+            </div>
+            <div class="col-1">
+                <button type="button" class="btn btn-primary" onclick="switchAnswer('A10')">答え</button>
+            </div>
+            <div class="col">
+                <div id="A10" style="visibility:hidden">
+                    <pre>
+                        <code class="python">
+products = {'<span id="24"></span>' : <span id="25"></span>, '<span id="26"></span>' : <span id="27"></span>}
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container bg-light mt-3 p-3">
+        <!--11:28-29-->
+        <div class="row border justify-content-center align-items-center">
+            <div class="col-3">
+                <p>11.「<code>products</code>」の「<code>'<span id="28"></span>'</code>」というキーの値を「<code>value</code>」という変数に代入する。</p>
+            </div>
+            <div class="col-3">
+                <p>出力 :
+                    <pre>
+                        <code class="python">
+->print(value)
+'<span id="29"></span>'
+                        </code>
+                    </pre>
+                </p>
+            </div>
+            <div class="col-1">
+                <button type="button" class="btn btn-primary" onclick="switchAnswer('A11')">答え</button>
+            </div>
+            <div class="col">
+                <div id="A11" style="visibility:hidden">
+                    <pre>
+                        <code class="python">
+value = products['<span id="28"></span>']
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container bg-light mt-3 p-3">
+        <!--12:30-31-->
+        <div class="row border justify-content-center align-items-center">
+            <div class="col-3">
+                <p>12.「<code>products</code>」の「<code>'<span id="30"></span>'</code>」というキーの値を「<span id="31"></span>」にする。</p>
+            </div>
+            <div class="col-3">
+                <p>出力 :
+                    <pre>
+                        <code class="python">
+->print(products['<span id="30"></span>'])
+<span id="31"></span>
+                        </code>
+                    </pre>
+                </p>
+            </div>
+            <div class="col-1">
+                <button type="button" class="btn btn-primary" onclick="switchAnswer('A12')">答え</button>
+            </div>
+            <div class="col">
+                <div id="A12" style="visibility:hidden">
+                    <pre>
+                        <code class="python">
+products['<span id="30"></span>'] = <span id="31"></span>
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container bg-light mt-3 p-3">
+        <!--13:32-35-->
+        <div class="row border justify-content-center align-items-center">
+            <div class="col-3">
+                <p>13.「<code>products</code>」に<code>{'<span id="32"></span>' : <span id="33"></span>}</code>を追加する。</p>
+            </div>
+            <div class="col-3">
+                <p>出力 :
+                    <pre>
+                        <code class="python">
+->print(products)
+{'<span id="24"></span>' : <span id="34"></span>, '<span id="26"></span>' : <span id="35"></span>, '<span id="32"></span>' : <span id="33"></span>}
+                        </code>
+                    </pre>
+                </p>
+            </div>
+            <div class="col-1">
+                <button type="button" class="btn btn-primary" onclick="switchAnswer('A13')">答え</button>
+            </div>
+            <div class="col">
+                <div id="A13" style="visibility:hidden">
+                    <pre>
+                        <code class="python">
+products['<span id="32"></span>'] = <span id="33"></span>
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

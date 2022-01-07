@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <script type="text/javascript" src="Util.js"></script>
-    <script type="text/javascript" src="Function.js"></script>
+    <script type="text/javascript" src="BranchAndLoop.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/vs2015.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
-    <title>Pythonテスト 2.関数</title>
+    <title>Pythonテスト 5.分岐とループ</title>
 </head>
 
 <body>
     <div class="container mb-3 pb-3">
         <div class="row justify-content-center align-items-center">
             <div class="col">
-                <h1 class="text-center">2. 関数</h1>
+                <h1 class="text-center">5.分岐とループ</h1>
             </div>
         </div>
     </div>
@@ -36,14 +36,16 @@
         <!--1:id=0-1-->
         <div class="row border justify-content-center align-items-center">
             <div class="col-3">
-                <p>1. 「<span id="0"></span>」と表示する関数「<code><span id="1"></span></code>」をつくる。</p>
+                <p>1. 数字(<code>num</code>)を与え<span id="0"></span>であれば「hit」と表示する関数「<code>hit_number</code>」をつくる。</p>
             </div>
             <div class="col-3">
                 <p>出力 :
                     <pre>
                         <code class="python">
--><span id="1"></span>()
-<span id="0"></span>
+->hit_number(<span id="1"></span>)
+
+->hit_number(<span id="0"></span>)
+hit
                         </code>
                     </pre>
                 </p>
@@ -55,8 +57,9 @@
                 <div id="A1" style="visibility:hidden">
                     <pre>
                         <code class="python">
-def <span id="1"></span>():
-    print("<span id="0"></span>")
+def hit_number(num):
+    if num == <span id="0"></span>:
+        print('hit')
                         </code>
                     </pre>
                 </div>
@@ -66,14 +69,16 @@ def <span id="1"></span>():
         <!--2:id-->
         <div class="row border justify-content-center align-items-center">
             <div class="col-3">
-                <p>2. 円周率（3.141592）を返す関数「<code>pi</code>」をつくる。</p>
+                <p>2. 数字(<code>num</code>)を与え偶数であれば「(<code>num</code>) is even.」、奇数であれば「(<code>num</code>) is odd.」と表示する関数「<code>even_or_odd</code>」をつくる。</p>
             </div>
             <div class="col-3">
                 <p>出力 :
                     <pre>
                         <code class="python">
-->print(str(pi()))
-3.141592
+->even_or_odd(114)
+114 is even.
+->even_or_odd(51)
+51 is odd.
                         </code>
                     </pre>
                 </p>
@@ -85,27 +90,47 @@ def <span id="1"></span>():
                 <div id="A2" style="visibility:hidden">
                     <pre>
                         <code class="python">
-def pi():
-    return 3.141592
+def even_or_odd(num):
+    if num % 2 == 0:
+        print(str(num) + ' is even.')
+    else:
+        print(str(num) + ' is odd.')
+                        </code>
+                    </pre>
+                    <p>または</p>
+                    <pre>
+                        <code class="python">
+def even_or_odd(num):
+    append = ""
+    if num % 2 == 0:
+        append = ' is even.'
+    else:
+        append = ' is odd.'
+
+    print(str(num) + append)
                         </code>
                     </pre>
                 </div>
             </div>
         </div>
 
-        <!--3:id=2-3-->
+        <!--3:id-->
         <div class="row border justify-content-center align-items-center">
             <div class="col-3">
-                <p>3. 「<code>name</code>」という名前の引数をとり，「<span id="2"></span>, (<code>name</code>).」と表示する関数「<code><span id="3"></span></code>」をつくる。()は変数の中身。</p>
+                <p>3. 数字(<code>num</code>)を与え正の数であれば「(<code>num</code>) is positive.」、負の数であれば「(<code>num</code>) is negative.」、ゼロであれば「(<code>num</code>) is zero.」と表示する関数「<code>more_or_less</code>」をつくる。</p>
             </div>
             <div class="col-3">
                 <p>出力 :
                     <pre>
-                    <code class="python">
--><span id="3"></span>('Rossum')
-<span id="2"></span>, Rossum.
-                    </code>
-                </pre>
+                        <code class="python">
+->more_or_less(114)
+114 is positive.
+->more_or_less(-514)
+-514 is negative.
+->more_or_less(0)
+0 is zero.
+                        </code>
+                    </pre>
                 </p>
             </div>
             <div class="col-1">
@@ -114,11 +139,31 @@ def pi():
             <div class="col">
                 <div id="A3" style="visibility:hidden">
                     <pre>
-                    <code class="python">
-def <span id="3"></span>(name):
-    print("<span id="2"></span>, " + name)
-                    </code>
-                </pre>
+                        <code class="python">
+def more_or_less(num):
+    if num > 0:
+        print(str(num) + ' is positive.')
+    elif num < 0:
+        print(str(num) + ' is negative.')
+    else:
+        print(str(num) + ' is zero.')
+                        </code>
+                    </pre>
+                    <p>または</p>
+                    <pre>
+                        <code class="python">
+def more_or_less(num):
+    append = ""
+    if num > 0:
+        append = ' is positive.'
+    elif num < 0:
+        append = ' is negative.'
+    else:
+        append = ' is zero.'
+
+    print(str(num) + append)
+                        </code>
+                    </pre>
                 </div>
             </div>
         </div>
@@ -126,16 +171,24 @@ def <span id="3"></span>(name):
         <!--4:id-->
         <div class="row border justify-content-center align-items-center">
             <div class="col-3">
-                <p>4. 「<code>family</code>」「<code>first</code>」という名前の引数をとり，「You are (<code>first</code>) (<code>family</code>).」と表示する関数「<code>show_name</code>」をつくる。()は変数の中身。</p>
+                <p>4. 1から10まで順に表示する関数「<code>countup</code>」をつくる。</p>
             </div>
             <div class="col-3">
                 <p>出力 :
                     <pre>
-                    <code class="python">
-->show_name('van Rossum', 'Guido')
-You are Guido van Rossum.
-                    </code>
-                </pre>
+                        <code class="python">
+->countup()
+1
+2
+3
+4
+5
+6
+7
+8
+9
+                        </code>
+                    </pre>
                 </p>
             </div>
             <div class="col-1">
@@ -144,11 +197,22 @@ You are Guido van Rossum.
             <div class="col">
                 <div id="A4" style="visibility:hidden">
                     <pre>
-                    <code class="python">
-def show_name(family, first):
-    print("You are " + first + " " + family)
-                    </code>
-                </pre>
+                        <code class="python">
+def countup():
+    for count in range(10):
+        print(str(1 + count))
+                        </code>
+                    </pre>
+                    <p>または</p>
+                    <pre>
+                        <code class="python">
+def countup():
+    count = 1
+    while count <= 10:
+        print(count)
+        count += 1
+                        </code>
+                    </pre>
                 </div>
             </div>
         </div>
